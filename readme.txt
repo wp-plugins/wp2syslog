@@ -40,6 +40,9 @@ wp2syslog -- Global logging facility for WordPress (WPsyslog revisited)
 
 == Changelog ==
 
+= 1.0.2 =
+* fix: compatibility with php 5.3 (sorry, php -l *php won't work as I expected).
+
 = 1.0.1 =
 * fix: Backward compatibility with php 5.3. Warranty: I've not fully tested with php 5.3.
 
