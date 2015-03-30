@@ -4,7 +4,7 @@
    Plugin URI: https://github.com/kataweb/wp2syslog
    Description: It keeps track of wordpress's events and log them to syslog.
    Author: psicosi448
-   Version: 1.0.0
+   Version: 1.0.1
    Author URI: http://www.kataweb.it
  */
 
