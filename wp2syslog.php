@@ -92,7 +92,8 @@ class WP2SYSLOG{
 						return;
 				}
 
-				if($this->init_status=='config' && $this->settings->get_options()['db']=='true' )
+				$check_options=$this->settings->get_options();
+				if($this->init_status=='config' && $check_options['db']=='true' )
 				{ 
 						//OK, let's go to create or upgrade wp2syslog table
 						$this->wp2syslog('wp2syslog', __('wp2syslog is going to create table ..', 'wp2syslog'), 2);
