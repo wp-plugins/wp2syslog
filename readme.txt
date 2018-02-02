@@ -1,6 +1,6 @@
 === wp2syslog ===
 Contributors: psicosi448
-Donate link: 
+Donate link:
 Tags: logging,events,actions,syslog
 Requires at least: 3.3
 Tested up to: 4.2
@@ -12,13 +12,13 @@ wp2syslog -- Global logging facility for WordPress (WPsyslog revisited)
 
 == Description ==
 
-**End users can benefit from wp2syslog:**   
+**End users can benefit from wp2syslog:**
 
 *	Log entries for core events help to keep track of the daily business, especially on multiuser blogs.
 *	Log entries for core events can raise awareness for threats and problems, for example abuse attempts.
 *	Log entries triggered by plugins allow the user to comprehend the functionality of the plugin.
 
-**Developers can benefit in two ways from wp2syslog:**  
+**Developers can benefit in two ways from wp2syslog:**
 
 * At each point of the code, a log entry can be triggered. No need to print to the browser, just let wp2syslog put it in the database, and you can have a look later.
 * You can develop your plugins with support for wp2syslog. This will give your users the chance to better understand what your plugin is doing (see doc/specs.html).
@@ -39,6 +39,9 @@ wp2syslog -- Global logging facility for WordPress (WPsyslog revisited)
 2. Show log, with query filter
 
 == Changelog ==
+
+= 1.0.5 -
+* fix: removed mysql_error call in favor of $wpdb->last_error
 
 = 1.0.4 =
 * fix: load css only in showlog page
