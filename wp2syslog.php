@@ -4,7 +4,7 @@
    Plugin URI: https://github.com/kataweb/wp2syslog
    Description: It keeps track of wordpress's events and log them to syslog.
    Author: psicosi448
-   Version: 1.0.4
+   Version: 1.0.5
    Author URI: http://www.kataweb.it
  */
 
@@ -24,7 +24,7 @@ define('WP2SYSLOG_PLUGIN_NAME', trim(dirname(plugin_basename(__FILE__)), '/'));
 if (!defined('WP2SYSLOG_PLUGIN_DIR'))
 define('WP2SYSLOG_PLUGIN_DIR', WP_PLUGIN_DIR . '/' . WP2SYSLOG_PLUGIN_NAME);
 if (!defined('WP2SYSLOG_VERSION_NUM'))
-define('WP2SYSLOG_VERSION_NUM', '1.0.4');
+define('WP2SYSLOG_VERSION_NUM', '1.0.5');
 
 require_once(WP2SYSLOG_PLUGIN_DIR.'/wp2syslog_settings.php');
 require_once(WP2SYSLOG_PLUGIN_DIR.'/wp2syslog_showlog.php');
@@ -85,7 +85,7 @@ class WP2SYSLOG{
 						{
 								update_option('wp2syslog_version_num', WP2SYSLOG_VERSION_NUM);
 						}
-						
+
 						//Force a config state and init() again ..
 						$this->set_init_status('config');
 						$this->init();
@@ -94,7 +94,7 @@ class WP2SYSLOG{
 
 				$check_options=$this->settings->get_options();
 				if($this->init_status=='config' && $check_options['db']=='true' )
-				{ 
+				{
 						//OK, let's go to create or upgrade wp2syslog table
 						$this->wp2syslog('wp2syslog', __('wp2syslog is going to create table ..', 'wp2syslog'), 2);
 
@@ -239,7 +239,7 @@ class WP2SYSLOG{
 
 						if ( false === $result)
 						{
-								syslog(LOG_WARNING, "$block_header $severityname: MYSQLERROR ".mysql_error());
+								syslog(LOG_WARNING, "$block_header $severityname: MYSQLERROR ".$wpdb->last_error);
 								return false;
 						}
 				}
